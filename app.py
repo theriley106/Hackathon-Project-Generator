@@ -5,7 +5,7 @@ app = Flask(__name__, static_url_path='/static')
 
 @app.route("/newIdea", methods=["GET"])
 def get_new():
-	ideas = [x for x in open("ideas.txt").read().split("\n") if len(x) > 5]
+	ideas = [x for x in open("ideas.txt").read().split("\n") if len(x) > 5 and len(x) < 200]
 	return random.choice(ideas)
 
 @app.route('/', methods=['GET'])
