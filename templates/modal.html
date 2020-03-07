@@ -1,0 +1,62 @@
+<script>
+
+</script>
+
+<script type="text/javascript">
+    console.log("OPENED");
+    function open(){
+      if (window.ws == null){
+        window.ws = new WebSocket("ws://localhost:8000/echo");
+        }
+        window.ws.onopen = function(idea) {
+          window.ws.send(document.getElementById("exampleModalLongTitle").innerHTML);
+       };
+       window.ws.onclose = function(evt) {
+          console.log("CLOSING");
+       };
+       window.ws.onmessage = function(evt) {
+          var obj = JSON.parse(evt.data);
+          document.getElementById("test").innerHTML = obj.html;
+          document.getElementById("updated").innerHTML = "Updated: " + obj.updated;
+       };
+    }
+    
+    
+    
+     
+     function close(){
+      window.ws.send("socket closed");
+      window.ws.close();
+      window.ws = null;
+     }
+
+    $(window).on('shown.bs.modal', function() { 
+    $('#exampleModalLong').modal('show');
+
+        open();
+    });
+
+    $(window).on('hidden.bs.modal', function() { 
+    $('#code').modal('hide');
+
+        close();
+        document.getElementById("test").innerHTML = "";
+    });
+  </script>
+
+
+<p hidden id="exampleModalLongTitle"></p>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div id="test" class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button data-dismiss="modal" type="button" class="btn btn-danger pull-left">Cancel Process</button>
+        <p style="padding-top:5px" id="updated" class="pull-right"></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,9 +16,13 @@
     }
 
     function newIdea(){
-      document.getElementById("hackathonIdea").innerHTML = httpGet("/newIdea");
+      x = httpGet("/newIdea");
+      document.getElementById("hackathonIdea").innerHTML = x;
+      document.getElementById("exampleModalLongTitle").innerHTML = x;
+      
     }
   </script>
+  
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -104,6 +108,12 @@
     <div class="col-sm-8 text-left"> 
       <div style="height: 200px;">
         <center><h1 id="hackathonIdea"></h1></center>
+        <center>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+          Create this project
+        </button>
+      </center>
+        {% include 'modal.html' %}
       </div>
 
       <hr>
