@@ -109,19 +109,24 @@
       <div style="height: 200px;">
         <center><h1 id="hackathonIdea"></h1></center>
         <center>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-          Create this project
-        </button>
+        
       </center>
         {% include 'modal.html' %}
       </div>
 
       <hr>
       <center>
-        <button onclick="newIdea()" type="button" class="btn btn-primary btn-lg">Generate a winning hackathon proposal</button>
+        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalLong">
+          Create this project
+        </button>
+        <button onclick="newIdea()" type="button" class="btn btn-warning btn-lg">Generate another project</button>
       </center>
       <h3>How does this work?</h3>
       <p>This project generates winning project proposals using a finetuned version of OpenAIs GPT-2 Language Model.</p>
+
+      <h3>Where does the dataset come from?</h3>
+      <p>We used UIPath to scrape winning hackathon projects from Devpost and fed them through the model.</p>
+
 
     </div>
     <div class="col-sm-2 sidenav">
@@ -155,6 +160,9 @@
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
+  <script>
+  newIdea();
+  </script>
 </footer>
 
 </body>

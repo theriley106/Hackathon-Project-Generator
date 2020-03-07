@@ -6,7 +6,11 @@
     console.log("OPENED");
     function open(){
       if (window.ws == null){
-        window.ws = new WebSocket("ws://localhost:8000/echo");
+        var loc = window.location, new_uri;
+        new_uri = "ws:";
+        new_uri += "//" + loc.host;
+        new_uri += loc.pathname + "/echo";
+        window.ws = new WebSocket(new_uri);
         }
         window.ws.onopen = function(idea) {
           window.ws.send(document.getElementById("exampleModalLongTitle").innerHTML);
