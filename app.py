@@ -1,9 +1,13 @@
-from flask import Flask, render_template, request, url_for, redirect, Markup, jsonify, make_response, send_from_directory, session
+from flask import Flask, render_template, request, url_for, redirect, Markup, jsonify, make_response, send_from_directory, session, send_file
 import random
 from flask_sockets import Sockets
 import datetime
 import time
 import json
+
+from googleapiclient.discovery import build
+CX = "015106168428982565841:kdznjgvin4h"
+KEY = "AIzaSyDmAMJpq3oTLS-L43e9RgqpbioSiHHgM9w"
 
 
 app = Flask(__name__, static_url_path='/static')
@@ -34,6 +38,19 @@ def get_new():
 	chosenIdea = IDEAS.pop(index)
 	RECENT.append(chosenIdea)
 	return chosenIdea
+import pymongo, ssl
+from pymongo import MongoClient
+
+uri = 'mongodb+srv://hackhacks:Hackathons-are-super-cool!@cluster0-2o2wa.gcp.mongodb.net/test?retryWrites=true&w=majority'
+
+client = MongoClient(uri, ssl_cert_reqs=ssl.CERT_NONE)
+
+print("made client, making collection")
+db = client.gettingStarted
+people = db.people
+
+db = client.database
+hackathon_ideas = db.hackathon_ideas
 
 @app.route('/', methods=['GET'])
 def index():
@@ -104,3 +121,60 @@ def echo_socket(ws):
 if __name__ == '__main__':
 	raw_input("It looks like you're trying to run this directly without web sockets.  Continue? ")
 	app.run(host='127.0.0.1', port=5000)
+
+@app.route('/testdata', methods=['GET'])
+def test():
+	import datetime
+	personDocument = {
+	"name": { "first": "Alan", "last": "Turing" },
+	"birth": datetime.datetime(1912, 6, 23),
+	"death": datetime.datetime(1954, 6, 7),
+	"contribs": [ "Turing machine", "Turing test", "Turingery" ],
+	"views": 1250000
+	}
+	return str(people.insert_one(personDocument))
+
+@app.route('/test_image/<title>')
+def test_image(title):
+	return generate_image_url(title, "not using this yet")
+
+def get_image_link(term):
+	service = build("customsearch", "v1", developerKey=KEY)
+	res = service.cse().list(
+		q=term,
+		cx=CX,
+		searchType="image",
+		imgType="clipart",
+		num=2
+	).execute()
+	if "items" not in res:
+		return None
+	return res["items"][0]["link"]
+
+def get_keywords(big_string):
+	# pass through for now
+	return big_string
+
+def generate_image_url(title, tagline):
+	default_image_link = "https://illustoon.com/photo/3813.png"
+	return get_image_link(get_keywords(title)) or default_image_link
+
+
+def save_real_fake_idea(title, tagline, image_url):
+	idea_document = {
+		title: title,
+		tagline: tagline,
+		image_url: image_url,
+		num_likes: 0
+	}
+	result = hackathon_ideas.insert_one(idea_document)
+	# if success update all websockets
+	# do something with result
+
+def get_results():
+
+
+@app.route('/starter')
+def download_starter():
+	title = request.args.get('title')
+	return send_file('hackathon-starter-master.zip', attachment_filename=f'{title}.zip')
