@@ -33,7 +33,7 @@
     .sidenav {
       padding-top: 20px;
       background-color: #f1f1f1;
-      height: 100%;
+      height: 130%;
     }
     
     /* Set black background color, white text and some padding */
@@ -51,6 +51,19 @@
       }
       .row.content {height:auto;} 
     }
+
+    .divtemp {
+  position: relative;
+  display: inline;
+}
+.imtip {
+  position: absolute;
+  bottom: 10;
+  left: 0;
+}
+.main {
+  overflow:auto;
+}
   </style>
 </head>
 <body>
@@ -71,7 +84,7 @@
   </div>
 </nav>
   
-<div class="container-fluid text-center">    
+<div class="container-fluid text-center main">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
       <h4>Build using</h4>
@@ -90,8 +103,8 @@
     </div>
     <div class="col-sm-8 text-left"> 
       <div style="height: 200px;">
-      <center><h1 id="hackathonIdea">Welcome</h1></center>
-    </div>
+        <center><h1 id="hackathonIdea"></h1></center>
+      </div>
 
       <hr>
       <center>
@@ -99,13 +112,32 @@
       </center>
       <h3>How does this work?</h3>
       <p>This project generates winning project proposals using a finetuned version of OpenAIs GPT-2 Language Model.</p>
+
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
-        <p>ADS</p>
+
+        <div class="divtemp">
+          <img height="100px" width="150px" src="/static/project.jpeg" />
+          <img src="/static/winner.png" class="imtip" />
+        </div>
+        <p style="padding-left: 12px; padding-top:5px; text-align: left;" ><font color="blue">Goody Project</font></p>
+        <p style="text-align: left;">The service that manages to get...</p>
+        <button type="button" class="btn btn-default">Download Code</button>
+
+
       </div>
       <div class="well">
-        <p>ADS</p>
+
+        <div class="divtemp">
+          <img height="100px" width="150px" src="/static/image2.jpg" />
+          <img src="/static/winner.png" class="imtip" />
+        </div>
+        <p style="padding-left: 12px; padding-top:5px; text-align: left;" ><font color="blue">FaceIO</font></p>
+        <p style="text-align: left;">Help your store run smoothly...</p>
+        <button type="button" class="btn btn-default">Download Code</button>
+
+
       </div>
     </div>
   </div>
