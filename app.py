@@ -128,6 +128,7 @@ def echo_socket(ws):
 		document = db.hackathon_ideas.find_one({"_id": ObjectId(idea_id)})
 		projectName = document["title"]
 		image = document["image_url"]
+		domain = f'www.{document["title"].lower()}.com'
 		base_html = gen_base_html(message)
 		for i, step in enumerate(STEPS):
 			html = gen_html(base_html, currentLoading=i)
