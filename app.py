@@ -146,6 +146,8 @@ def echo_socket(ws):
 		# html_2 = html_2 + ''
 		ws.send(json.dumps({"html": html_2, "updated": str(datetime.now())}))
 		time.sleep(.1)
+		document["created_at"] = time.time()
+		db.hackathon_ideas.save(document)
 
 @app.route('/testdata', methods=['GET'])
 def test():
