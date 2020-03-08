@@ -31,6 +31,7 @@ uri = 'mongodb+srv://hackhacks:Hackathons-are-super-cool!@cluster0-2o2wa.gcp.mon
 client = MongoClient(uri, ssl_cert_reqs=ssl.CERT_NONE)
 
 print("made client, making collection")
+print(client)
 db = client.gettingStarted
 people = db.people
 
@@ -43,7 +44,6 @@ RECENT = []
 STEPS = ["Generating Project Name", "Generating Logo", "Buying Domain Name", "Raising Seed Round", "Building Starter Code", "Preparing Zip File"]
 TIME_BETWEEN = 2.0
 PLUS_MINUS_TIME = .5
-print("FINISHED")
 
 def gen_waiting_time():
 	return TIME_BETWEEN + random.uniform(PLUS_MINUS_TIME * -1, PLUS_MINUS_TIME)
