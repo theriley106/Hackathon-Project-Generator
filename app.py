@@ -229,12 +229,13 @@ def zipdir(path, ziph, title, img_src):
 def download_starter():
 	title = request.args.get('title')
 	img_src = request.args.get('img_src')
-
-	zipf = zipfile.ZipFile(f'{title}_starter.zip', 'w', zipfile.ZIP_DEFLATED)
+	file_name = f'{title}_starter.zip'
+	zipf = zipfile.ZipFile(file_name, 'w', zipfile.ZIP_DEFLATED)
 	zipdir('./hackathon-starter-master', zipf, title, img_src)
 	zipf.close()
-
-	return send_file(f'{title}_starter.zip')
+	tmp_send = send_file(file_name, attachment_filename=file_name)
+	os.remove(file_name)
+	return tmp_send
 
 @app.route('/like/<oid>', methods=['POST', 'GET'])
 def like_idea(oid):
