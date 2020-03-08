@@ -13,7 +13,7 @@ MESSAGES = []
 PROJECTS = []
 
 STEPS = ["Generating Project Name", "Generating Logo", "Buying Domain Name", "Raising Seed Round", "Building Starter Code", "Preparing Zip File"]
-TIME_BETWEEN = 0
+TIME_BETWEEN = 2.0
 PLUS_MINUS_TIME = .5
 
 def gen_waiting_time():
