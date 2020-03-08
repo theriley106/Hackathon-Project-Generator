@@ -121,7 +121,7 @@ def echo_socket(ws):
 			html = gen_html(base_html, currentLoading=i)
 			html_final = base_html + html
 			ws.send(json.dumps({"html": html_final, "updated": str(datetime.now())}))
-			# time.sleep(gen_waiting_time())
+			time.sleep(gen_waiting_time())
 		html = gen_html(base_html, currentLoading=1000, finish=True)
 
 		html_2 = base_html + """<div class="row">
