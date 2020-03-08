@@ -127,10 +127,6 @@ def echo_socket(ws):
 		ws.send(json.dumps({"html": html_2, "updated": str(datetime.datetime.now())}))
 		time.sleep(.1)
 
-if __name__ == '__main__':
-	raw_input("It looks like you're trying to run this directly without web sockets.  Continue? ")
-	app.run(host='127.0.0.1', port=5000)
-
 @app.route('/testdata', methods=['GET'])
 def test():
 	personDocument = {
@@ -240,4 +236,5 @@ def like_idea(oid):
 	return bsondumps(db.hackathon_ideas.save(document))
 
 if __name__ == '__main__':
+	raw_input("It looks like you're trying to run this directly without web sockets.  Continue? ")
 	app.run(host='127.0.0.1', port=5000)
