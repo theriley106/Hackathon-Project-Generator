@@ -128,7 +128,7 @@ def echo_socket(ws):
 		document = db.hackathon_ideas.find_one({"_id": ObjectId(idea_id)})
 		projectName = document["title"]
 		image = document["image_url"]
-		domain = f'www.{document["title"].lower()}.com'
+		domain = 'www.{}.com'.format(document["title"].lower())
 		base_html = gen_base_html(message)
 		for i, step in enumerate(STEPS):
 			html = gen_html(base_html, currentLoading=i)
@@ -188,7 +188,7 @@ def get_keywords(big_string):
 
 def generate_image_url(title, tagline):
 	default_image_link = "https://illustoon.com/photo/3813.png"
-	return get_image_link(get_keywords(f'{title} {tagline}')) or default_image_link
+	return get_image_link(get_keywords('{} {}'.format(title, tagline))) or default_image_link
 
 
 def save_real_fake_idea(title, tagline, image_url):
@@ -247,7 +247,7 @@ def zipdir(path, ziph, title, img_src):
 def download_starter():
 	title = request.args.get('title')
 	img_src = request.args.get('img_src')
-	file_name = f'{title}_starter.zip'
+	file_name = '{}_starter.zip'.format(title)
 	zipf = zipfile.ZipFile(file_name, 'w', zipfile.ZIP_DEFLATED)
 	zipdir('./hackathon-starter-master', zipf, title, img_src)
 	zipf.close()
