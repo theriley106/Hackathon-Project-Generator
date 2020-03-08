@@ -33,10 +33,13 @@ client = MongoClient(uri, ssl_cert_reqs=ssl.CERT_NONE)
 print("made client, making collection")
 print(client)
 db = client.gettingStarted
+print("FINISHE DB PART 1")
 people = db.people
-
+print("FINISHED PEOPLE")
 db = client.database
+print("FINISHED DB")
 hackathon_ideas = db.hackathon_ideas
+print("FINISHED HACKATHON IDEAS")
 
 # IDEAS = [x for x in open("ideas.txt").read().split("\n") if len(x) > 5 and len(x) < 200]
 IDEAS = [x for x in db.hackathon_ideas.find({})]
