@@ -69,7 +69,7 @@ def index():
 def projects():
 	sort_by = request.args.get('sort_by')
 	info = get_results(page_size=8, query_str=sort_by)
-	res = [{"title": x["tagline"], "image": x["image_url"], "oid": x["_id"], "num_likes": x["num_likes"]} for x in info]
+	res = [{"title": x["title"], "tagline": x["tagline"], "image": x["image_url"], "oid": x["_id"], "num_likes": x["num_likes"]} for x in info]
 	top3, top6 = res[:4], res[4:]
 	print(top3)
 	print(top6)
