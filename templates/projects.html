@@ -31,9 +31,10 @@
 
     function newIdea(){
       x = httpGet("/newIdea");
-      document.getElementById("hackathonIdea").innerHTML = x;
-      document.getElementById("exampleModalLongTitle").innerHTML = x;
-      
+      x = JSON.parse(x);
+      document.getElementById("hackathonIdea").innerHTML = x["tagline"];
+      document.getElementById("exampleModalLongTitle").innerHTML = x["tagline"];
+      document.getElementById("selectedIdeaId").innerHTML = x["_id"]["$oid"];
     }
   </script>
   
