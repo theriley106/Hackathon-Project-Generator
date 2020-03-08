@@ -71,12 +71,24 @@ def index():
 @app.route('/projects', methods=['GET'])
 def projects():
 	sort_by = request.args.get('sort_by')
-	info = get_results(page_size=8, query_str=sort_by)
+	sort_by = 'Most recent' if sort_by == None else sort_by
+	Sort_by_mapping = {
+		"Most liked": "num_likes",
+		"Most recent": "created_at",
+		"Random": "random",
+	}
+	query_str = None
+	if sort_by in Sort_by_mapping:
+		query_str = Sort_by_mapping[sort_by]
+	else:
+		return redirect('/projects')
+	info = get_results(page_size=8, query_str=query_str)
 	res = [{"title": x["title"], "tagline": x["tagline"], "image": x["image_url"], "oid": x["_id"], "num_likes": x["num_likes"]} for x in info]
 	top3, top6 = res[:4], res[4:]
-	print(top3)
-	print(top6)
-	return render_template("projects.html", top3=top3, top6=top6)
+	sort_by_choices = list(Sort_by_mapping.keys())
+	sort_by_choices.remove(sort_by)
+	sort_by_choices.insert(0, sort_by)
+	return render_template("projects.html", top3=top3, top6=top6, sort_by_choices=sort_by_choices)
 
 def gen_base_html(message):
 	html = """<center><h4><br><b>{}</b></h4><br></center>""".format(message)
@@ -204,9 +216,12 @@ def get_results(page_size=50, page_num=0, query_str="created_at"):
 	page_size = 50 if page_size == None else int(page_size)
 	page_num = 0 if page_num == None else int(page_num)
 	query_str = "created_at" if query_str == None else query_str
-
-	query_result = db.hackathon_ideas.find({}).sort(
-		[(query_str, -1)]).skip(page_num * page_size).limit(page_size)
+	query_result = None
+	print(query_str)
+	if query_str == "random":
+		query_result = db.hackathon_ideas.aggregate([{ "$sample": { "size": page_size } }])
+	else:
+		query_result = db.hackathon_ideas.find({}).sort([(query_str, -1)]).skip(page_num * page_size).limit(page_size)
 	return query_result
 
 
