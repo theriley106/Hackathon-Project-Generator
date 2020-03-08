@@ -6,39 +6,52 @@ Summary
 
 # Inspiration
 
-In need of an idea? Look no further
+As avid hackathon attendees, we've noticed that there's always a lot of pressure to come up with clever ideas with the potential to win.
 
 # What it does
 
-Generates winning hackathon ideas using machine learning
+Hackhacks generates winning hackathon ideas which are sure to win you prizes at your next hackathon. We also allow users to vote on the best ideas to crowdsource projects.
 
 # How I built it
 
-We scraped winning hackathon tagline and titles using ui path
+We web-scraped winning hackathon taglines and titles from DevPost using Uipath.
 
-We trained a Gpt2 so that we could generate realistic descriptions of hackathons
+We finetuned a GPT2 model so that we could generate realistic descriptions of hackathons from the output of the model.
 
-We used an online api to match our taglines with titles and matching images, falling back to google image search
+We used an online api to convert our taglines to unique titles and matching images/logos, falling back to google image search in case no title or image could be found.
 
-We built a web backend using flask and mongodb atlas that stores our data
+We built a web backend using Flask, WebSockets, and MongoDB Atlas that stores our winning hackathon ideas as well as user feedback.
+
+Our web application is built in bootstrap and vanilla JS.
 
 
 
 # Challenges I ran into
-
-
+One interesting result of training the GPT-2 system on our scraped dataset was that some of the generated results were exact copies of taglines from the training set.
+We're still trying to figure out how to prevent this kind of overtraining from occuring while maintaining high quality hackathon predictions.
 
 # Accomplishments that I'm proud of 
 
-
+We're proud of the fact that we completed a full stack effort which allows users to both get exposure to high quality hackathon ideas generated in our backend while interacting with
+these same proposals (in the form of "liking" the content) in the frontend.
 
 # What I learned
 
+This was our first time using Uipath for webscraping, and we found it to be an essential and natural part of our workflow in order to retrieve winning hackathon ideas from Devpost.
+We used this data to train a machine learning model for idea generation. We've never done text generation using machine learning before, and discovered a program that allows us to 
+train OpenAI's GPT-2 model on our own dataset in a process called "fine-tuning", which takes the original GPT-2 model and alters its weights to optimize for our given input data. This forces
+the output to be in a similar format to our training data, while maintaining all of the NLP features of the original GPT-2 model.
 
+Additionally, to get banner images for our generated ideas, we used the Google images API, which allows us to programmatically search through google images and find relevent content based off
+of keywords in our idea descriptions.
 
 # What's next for hackhacks
 
-Build a hackathon project idea generated using our algorithm. We've noticed many incredible ideas come out of the algorithm such as 
+Build a hackathon project idea generated using our algorithm. We've noticed many incredible ideas come out of the algorithm such as:
+
+1. We use geospatial data turbocharged with machine learning to detect multiple hazards such as flooding and parking spaces.
+2. Use your natural vision to create VR realistic environments!
+3. A website that allows students to learn about biodiversity in a virtual environment.
 
 # Built with
 
