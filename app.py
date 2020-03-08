@@ -12,8 +12,10 @@ from bson.json_util import dumps as bsondumps
 from pymongo import *
 from datetime import datetime
 from flask import *
-
 from googleapiclient.discovery import build
+import pymongo, ssl
+from pymongo import MongoClient
+
 CX = "015106168428982565841:kdznjgvin4h"
 KEY = "AIzaSyAIQaiuCivVITuKtoM_myK83I8_UwwXyXc"
 
@@ -24,7 +26,19 @@ MESSAGES = []
 
 PROJECTS = []
 
-IDEAS = [x for x in open("ideas.txt").read().split("\n") if len(x) > 5 and len(x) < 200]
+uri = 'mongodb+srv://hackhacks:Hackathons-are-super-cool!@cluster0-2o2wa.gcp.mongodb.net/test?retryWrites=true&w=majority'
+
+client = MongoClient(uri, ssl_cert_reqs=ssl.CERT_NONE)
+
+print("made client, making collection")
+db = client.gettingStarted
+people = db.people
+
+db = client.database
+hackathon_ideas = db.hackathon_ideas
+
+# IDEAS = [x for x in open("ideas.txt").read().split("\n") if len(x) > 5 and len(x) < 200]
+IDEAS = [x for x in db.hackathon_ideas.find({})]
 RECENT = []
 STEPS = ["Generating Project Name", "Generating Logo", "Buying Domain Name", "Raising Seed Round", "Building Starter Code", "Preparing Zip File"]
 TIME_BETWEEN = 2.0
@@ -42,24 +56,13 @@ def recent():
 
 @app.route("/newIdea", methods=["GET"])
 def get_new():
+	global IDEAS
+	if not IDEAS:
+		IDEAS = [x for x in db.hackathon_ideas.find({})]
 	index = random.randint(0, len(IDEAS)-1)
 	chosenIdea = IDEAS.pop(index)
 	RECENT.append(chosenIdea)
-	return chosenIdea
-import pymongo, ssl
-from pymongo import MongoClient
-
-uri = 'mongodb+srv://hackhacks:Hackathons-are-super-cool!@cluster0-2o2wa.gcp.mongodb.net/test?retryWrites=true&w=majority'
-
-client = MongoClient(uri, ssl_cert_reqs=ssl.CERT_NONE)
-
-print("made client, making collection")
-db = client.gettingStarted
-people = db.people
-
-db = client.database
-hackathon_ideas = db.hackathon_ideas
-
+	return bsondumps(chosenIdea)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -103,8 +106,16 @@ def gen_final_project_html(domain, projectName, image):
 
 @sockets.route('/echo')
 def echo_socket(ws):
+	domain = "google.com"
+	projectName = "projectName"
+	image = "/static/project.jpeg"
 	while True:
 		message = ws.receive()
+		idea_id = ws.receive()
+		print(idea_id)
+		document = db.hackathon_ideas.find_one({"_id": ObjectId(idea_id)})
+		projectName = document["title"]
+		image = document["image_url"]
 		base_html = gen_base_html(message)
 		for i, step in enumerate(STEPS):
 			html = gen_html(base_html, currentLoading=i)
@@ -113,15 +124,11 @@ def echo_socket(ws):
 			time.sleep(gen_waiting_time())
 		html = gen_html(base_html, currentLoading=1000, finish=True)
 
-		domain = "google.com"
-		projectName = "projectName"
-		image = "/static/project.jpeg"
-
 		html_2 = base_html + """<div class="row">
 		<div class="col-md-6">{}</div>
 		<div class="col-md-6">{}</div>
 		</div><br>
-		<button type="button" class="btn btn-primary btn-block">Download Files</button>""".format(html, gen_final_project_html(domain, projectName, image))
+		<button type="button" class="btn btn-primary btn-block" download="" onclick="location.href = '/starter?title={}&img_src={}';">Download Files</button>""".format(html, gen_final_project_html(domain, projectName, image), projectName, image)
 		
 
 		# html_2 = html_2 + ''
@@ -218,19 +225,19 @@ def zipdir(path, ziph, title, img_src):
 			else:
 				ziph.write(os.path.join(root, file))
 
-@app.route('/starter')
+@app.route('/starter', methods=['GET'])
 def download_starter():
 	title = request.args.get('title')
-	tagline = request.args.get('tagline')
 	img_src = request.args.get('img_src')
-
-	zipf = zipfile.ZipFile(f'{title}_starter.zip', 'w', zipfile.ZIP_DEFLATED)
+	file_name = f'{title}_starter.zip'
+	zipf = zipfile.ZipFile(file_name, 'w', zipfile.ZIP_DEFLATED)
 	zipdir('./hackathon-starter-master', zipf, title, img_src)
 	zipf.close()
+	tmp_send = send_file(file_name, attachment_filename=file_name)
+	os.remove(file_name)
+	return tmp_send
 
-	return send_file(f'{title}_starter.zip')
-
-@app.route('/like/<oid>', methods=['POST'])
+@app.route('/like/<oid>', methods=['POST', 'GET'])
 def like_idea(oid):
 	document = db.hackathon_ideas.find_one({"_id": ObjectId(oid)})
 	document["num_likes"] = document["num_likes"] + 1

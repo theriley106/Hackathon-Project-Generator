@@ -31,9 +31,10 @@
 
     function newIdea(){
       x = httpGet("/newIdea");
-      document.getElementById("hackathonIdea").innerHTML = x;
-      document.getElementById("exampleModalLongTitle").innerHTML = x;
-      
+      x = JSON.parse(x);
+      document.getElementById("hackathonIdea").innerHTML = x["tagline"];
+      document.getElementById("exampleModalLongTitle").innerHTML = x["tagline"];
+      document.getElementById("selectedIdeaId").innerHTML = x["_id"]["$oid"];
     }
   </script>
   
@@ -78,6 +79,12 @@
   position: absolute;
   bottom: 10;
   left: 0;
+}
+.img-responsive {
+  width: 360px;
+  height: 200px;
+  object-position: center; /* Center the image within the element */
+  margin-bottom: 1rem;
 }
 .main {
   overflow:auto;
