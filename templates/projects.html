@@ -161,7 +161,7 @@
           <p><strong>{{item.title}}</strong></p>
           <p>{{item.tagline}}</p>
           <div class="likes-container">
-            <button type="button" onclick='update("{{item.title}}_count")' class="btn btn-success like-button" onclick="like('{{item.oid}}')">Like</button>
+            <button type="button" class="btn btn-success like-button" onclick="update('{{item.title}}_count'); like('{{item.oid}}');">Clap</button>
             <p id="{{item.title}}_count" class="like-text">{{item.num_likes}}</p>
           </div>
         </div>
@@ -177,8 +177,8 @@
           <p><strong>{{item.title}}</strong></p>
           <p>{{item.tagline}}</p>
           <div class="likes-container">
-            <button type="button" class="btn btn-success like-button" onclick="like('{{item.oid}}')">Like</button>
-            <p class="like-text">{{item.num_likes}}</p>
+            <button type="button" class="btn btn-success like-button" onclick="update('{{item.title}}_count'); like('{{item.oid}}');">Clap</button>
+            <p id="{{item.title}}_count" class="like-text">{{item.num_likes}}</p>
           </div>
         </div>
     {% endfor %}
