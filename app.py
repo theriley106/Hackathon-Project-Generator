@@ -43,6 +43,7 @@ print("FINISHED HACKATHON IDEAS")
 
 # IDEAS = [x for x in open("ideas.txt").read().split("\n") if len(x) > 5 and len(x) < 200]
 IDEAS = [x for x in db.hackathon_ideas.find({})]
+print("FINISHED IDEAS")
 RECENT = []
 STEPS = ["Generating Project Name", "Generating Logo", "Buying Domain Name", "Raising Seed Round", "Building Starter Code", "Preparing Zip File"]
 TIME_BETWEEN = 2.0
