@@ -1,0 +1,331 @@
+We hope to make the process of reading for kids easier by allowing kids to read with them
+A simple way to visualize and interpret the news around the world.
+This program creates a volume that plays back the volume
+Machine-learning platform that identifies nearest river, how many cars are in, and how many are damaged
+WIC items are often confused by counterfeit forms. This app aims to correct this issue.
+A Simple Web App to Analysis the Tweets At The Speed Of Sound of Any Platform
+Design today by giving it to the best camera app on the planet
+A program that uses computer vision to map out the locations of missing persons.
+An IOT credit card that seamlessly integrates into your bank statements
+SpeedUP is a Twitch Panel that allows viewers to easily alert them when a device is under strain.
+An app that allows users to quickly find the foods they should be eating.
+Take care of your very own Facebook Messenger bot
+An AI/IoT solution to help farmers dispose of their lands optimally.
+An app that allows geologists to map out the carbon cycle in the past.
+An app that accumulates leftover money from every match you win and uses that accumulated money to finance your next game
+A fun, interactive game mode for CS students that teaches competitive coding concepts.
+Your medical wish list without the useless parts.
+A hands-free web application which manages and tracks internship applications for you and your team
+A community-driven platform for food waste management at your fingertips.
+A new and innovative way to properly discipline &amp; Develop an emotional rapport with a group of people.
+An app that has database of leases and will help owner find solution
+An and bizarro version of the password manager(?).
+Literacy readingias: An educational app bridging the gap between children and visual learners
+To discover the beauty of recycled waste music.
+Imagine a world where you dont know the caption to a song but knows the songs title and melody. It will automatically recognize it and play it in your Spotify playlist.
+An app that enables a user to practice their swing without a cane
+Decentralized app that provides financial information to financial institutions
+App for counting cattle across a pasture using drones and Tensorflow 2.0.
+An application that allows you to build a collaborative Web Synth Experience with other Harmony players and viewers.
+A Simple Method that Gets The Word Out To His or her Friends
+Use your nose/eyes to draw. We recommend you use your hands to explore.
+An app that allows geologists to rate the quality of their equipment against a scale ranging from 0 to 100.
+DApp used are expiration dates and credit card information.
+Make books accessible to all.
+An accessible resource guide for deaf children to communicate theirural information to teachers.
+EasyClick is a streamlined, convenient and reliable app that enables a user to quickly and easily report an emergency.
+We offer a one-stop shop for corporate workflow plans, empowering you to focus on your work, family, and loved ones.
+An app that connects a user to the nearest doctor, psychologist, dentist or physiotherapist and gives them a rating based on their medical skills.
+A minimalistic website to use when you have trouble with your day
+A Repository for Hackathon team members and co-workers.
+A way to verify integrity of loan documents on the Ethereum blockchain
+An assistant device that helps you practice and improve your body language
+AI to help car manufacturers identify when and how to correct vehicle defects
+A system that will balance load between hospitals and hospitals based on price or time difference
+An IOT prescription manager that seamlessly integrates into the workflow of medication dispenseers
+Our objective is to add value to your AR device by allowing you to project desired performance and tracking attributes using a trustless approach
+AI assistant for signing contracts with brokers
+A simple application to find out what activities schools offer per campus year.
+This project is to coordinate with other projects at CU Dallas to make accessible to all those who are unable or unwilling to give in to the pressure of high school.
+A Syntax that takes a keyword and returns a related related terms lasting depth as per criteria specified by the publisher.
+Book shopping with dollar store features
+An IOT credit score poll
+Never fall off your electric skateboard again! Fall-off detection and prevention tool for electric skateboards.
+A standalone application to help people find books on the fly
+A simple tool for traders to set interest rates on their portfolio
+We help create connected spaces for students to express themselves and learn about their fields.
+A Syntax that takes the current sentiment and looks for correlations with sentiment in news.
+Provides quick and easy access to emergency and tourist information via SMS and live video streaming.
+Emotion based music generator powered by spicy food.
+An affordable automated intercom system using satellites to find environmentally efficient ways to use energy
+This app uses machine learning to help you learn sign language by following facial expressions.
+Easily find and save events near you!
+A voice-to-sign interface for deaf people
+An app that analyzes social media to help you in managing your finances
+An AI based support bot for when you need help most days.
+A tool available for deaf individuals to understand foreign languages better and retain foreign language phonemes.
+A webapp to help promote basic hygiene and nutrition literacy in schools.
+An app that allows geologists to keep track of their lost and find any fossilized fossilized object.
+Why stop at Pokemon? Why not create your own Twitter bio?
+A Photographic Protocol offering instant feedback on presidential candidates as well as real-time news coverage.
+Making electric vehicles more accessible by making them recharge in a snap of a pic.
+Keep your laptop or hard drive close by with the click of a button
+U
+A neural network trained with gun violence data to identify potential gang violence
+A decentralized, zero collateral, zero interest loan.
+Easy Access and Connect
+A hands-free web application that allows the visually impaired to navigate his/her surroundings with ease
+A pre-trained neural network trained with emotional analysis to process text and words to form a sentence.
+A way to enhance your design so that it looks and acts the way you want it
+An online teaching assistant with automatic adjustments for pencilstrokes and regular paper.
+Find the clothes you like with one tap.
+An innovative and effective way to properly assess a college application.
+Gives you alerts for when you have certain things on your personal to-do list
+A streamlined workflow for visualizing disaster related data and sharing it with others
+An online teaching assistant that helps teach sign language to children 6 months old and above.
+A computer vision assistant that shows the user around more coherently
+⚕️A Messenger Chatbot that helps you find recipes and improve your lifestyle
+An and dynamic.
+An app that enables users to search for their favorite food dishes using the Spotify API.
+A browser extension that allows users to shop in the current stock market sentiment based on photos on the web.
+Achieve is a Goal Tracking App and Social Network for LGBT+ and Gender Non-Conforming Adults.
+We use geospatial data turbocharged with machine learning to detect multiple hazards such as flooding and parking spaces
+No longer used: Shopping online with Drive, Shop online with Walmart
+A realtime wildfire visual recognition tool for mapping and visualization.
+THINK SMART,
+The goal of the study was to determine the risk factor for type 2 diabetes in humans.
+Scan it, forget it, throw it away. Scan it again, throw it away.
+A simple way to visualize and track minesweeper activity
+A hand-built app to help you prepare for your future seminars
+Combining ride sharing services with the eventbrite API to create safer transportation to and from events
+A tool available that allows users to use visual images for learning and communication.
+An Amazon cloud service that tracks deforestation and provides sustainable agricultural practices for direct consumption and production.
+Your Flooded Website Predicts Ocean Speed
+Brainquake is a multiplayer, terminal-based facilitator that helps people better integrate business and mental health issues.
+Just by taking a picture of your heart, you will be presented with the best one that you like
+Quickly locate birds recently seen in yourown surroundings.
+Teaching cryptocurrencies at the right time
+AI assistant to help you learn the basics in banking!
+A way to increase recycling efficiency and reduce waste
+SpeedUP is a web application which is going over your text messages and tracks your spending habits with an eye to helping you achieve your goals and maximizing your money
+Monetize your email-
+A tool for adding Two Factor Authentication to Ethereum transactions
+Xtreme Challenge
+An app that promotes healthy eating while helping to mitigate disease
+A personal companion to enrich your student experience and enrich your day.
+Learning languages using real-time sensors
+Explore maps of your favorite music artists! Find out where theyre from and when theyre coming to play in your town.
+A way to verify integrity of databases and troves of data
+Our project is to make universities more conscious of the gender wage gap, to encourage women to join STEM
+The age of social media is upon us. We have to stop wasting time and energy channeling clicks.
+Smart Parking Is Paid Sick+
+An innovative and effective way to visualize and interpret the data that is tacking on at the gym.
+Safe, affordable and easy to use formal communication tool for students.
+Easy and effective way to find out where to study on campus
+A Syntax that takes in the current stock market sentiment and looks for correlations with sentiment in financial news.
+Gender wage gap at work: report found
+Improving accessibility with machine learning
+An innovative and innovative way to help the handicap-accessible by developing a neural network that can interpret words in a book.
+Gone are the days of spending money online. In a world of cheap physical products, online shopping
+A Fire TV app that shows the most important information about a TV show.
+A dance for a thousand tiny cubes
+A simple application to find out what activities schools offer in the nearby area
+A voice-to-sign interface for teachers to encourage group discussions and lead to effective communication
+Use musical styles the same way people use
+EasyClick is a free, simple, and user friendly app that integrates into hardware for users to upload sketches and get feedback on their work
+We want to rethink the way we interface with the world. This project is a website that has been collecting feedback on my work.
+Making sure businesses work towards their sustainability goals
+An android app that allows you to compute directions with just a phone call.
+An machine learning platform that helps trained individuals stay safe from unwanted attention
+This brain-powered app helps humans learn emotions and perform other tasks, including feeding, washing dishes.
+Globally, a large majority of the food we eat is animal protein. However, there are a large number of natural products that include whole grains, whole beans, whole nuts, whole ripening and ripening-grain products, and these can be found in grocery stores. Our goal was to determine whether these foods represented a risk factor for type 2 diabetes in humans.
+A hardware system that can create a sound with a sound barrier
+A transponder that listens to your heartbeat to aid in your financial development
+An app that allows doctors to know what medications are in their system and keep track on these.
+A microtransaction system for parking garage sales
+boon. is a web application for detecting early winter storms.
+Level the playing field by tackling the threat of sea level rise by slashing through the plastic.
+A website that allows students to learn about biodiversity in a virtual environment
+An alternative method of payment for real estate applications with little or no data collection.
+A hands-free and easy to use way to recycle plastic.
+A game/exploration that takes advantage of the vast amounts of data contained in PubMed.
+A second Pair of eye that can recognize and process images in real time
+Do you trust your family? Then check out Do you trust your family? then check out CryptoWatch
+An IOT prescription manager that enables work professionals to make more sustainable use of their time and resources.
+A fun and immersive way to connect people with the shops they are in.
+A Wallet-A-Pint For Analysts
+A game where you can play in a park
+An IOT credit score prediction website
+Car park monitoring and optimization - Drive safe with Uber
+A Simple and Fast way to convert from white to red in real time
+A toolkit for generating a tree from a snowcone
+Easy and affordable to buy, apartments, and buy new houses
+An immersive VR math education and visualization tool for the learning process of VR students.
+An app that connects students with their professor to complete their course.
+No longer used: Driving with unnecessary habits undone
+A platform for doctors, patients, and insurance agents to help them make informed financial decisions
+An facial recognition software tool to help you train for Badminton.
+No longer used: Scan the skies with Google Cloud Vision
+An app which identifies the food and gives it to others
+Do you have a car accident? If so, this might be the post for you. This post will show you how to get out of the car and into a parking lot.
+Aortex is a powerful tool for early warning and intervention. It allows users to scan parts of the world with the click of a button.
+This project allows beginners to grasp the concept of what a train is and how to get to your destination quickly.
+KiwEth provides an one-stop shop for all your basic needs in one place.
+Feedbank is a feedback bank that leverages customer feedback for optimization of service level contracting.
+A platform that connects environmentally conscious consumers to renewable energy assets to provide energy independence
+An AI based app that allows computer vision to automatically categorize pictures to help students learn the world by by
+Plan your meals with us
+A way to verify integrity of online files without a digital middleman.
+A simple application to find out what events occur every Friday in the month of Ramadan
+AirWise is an app that allows for the automaticirmation of if I have slept enough.
+A proof-of-concept for file sharing (like AirDrop)
+Save the earth!
+An android app that scrapes online to find materials to make a drum kit and returns with a drummin table and schematics.
+Using internet resources and people a lot less now
+A simple way to visualize accident information
+An efficient website design for adding more content than you can remember.
+A web application that allows users to manage their budgets and track their spending habits with a friendly touch.
+A SongTastic Credit Limit Manager for Bitcoin
+We created a smart accessory to help the visually impaired navigate to their destinations.
+A React webapp that allows students to collaborate on uploading photo ideas.
+We developed an app that allows food waste to be tracked and donated back to the community
+App that replaces a bank loan with a loan from a blockchain-based storage platform.
+An app that allows geologists to use river water to determine the origin and direction of new river beds.
+Empowering Conqueror Mode Players to Earn Appreciation Halls Online
+A fully anonymous and decentralized solution to any emergency
+We propose a protocol for conversing in locales to locals in developing countries about disasters.
+An app that allows users to manage their groceries in their pantry and track expiration dates, with options for voice recognition and camera input to provide a seamless, user-friendly experience.
+An app that connects teachers to students with similar educations.
+Why wait-filler? Get the job!
+An app that allows geologists to map out the carbon cycle in the past and give out new data
+An app that connects wirelessly to a web application and alerts the bot when a user is comfortable with their position.
+Recognize handwritten sketchs and generate a 3d model off of them
+Inspired by the #MeToo movement, where do you draw the line?
+Learn to program in an interactive way
+Automation through WiFi connectivity
+Empowering the 99%
+BankShare is a facebook-based app that allows people to share events with planned meals and drinks. Named after the goddess of knowledge, Cassia, who was also the goddess of health.
+A website that generates all the necessary information for a miner to complete his project
+A simple tool to avoid and report crime
+An alternative method of payment for medical professionals who are unable to pay with blockchain.
+A program that sells newspapers to Amazon.com for a low price.
+A fortress for friends and a shining example of cyber-security for businesses.
+An and a mic setup for a crowd-sourced analytics project
+Monetize your Messages
+DApp created to test AI software power Positivity and Loyalty Testing Technologies.
+EasyClick is a streamlined, streamlined version of what made so many other things easy: work!
+A way to identify if a given quantity is recyclable or not
+A simple and intuitive brain deformation simulator that corrects for motor blindness.
+A neural network that trains via feedback
+EasyClick is a new technology that combines the advantages of bare bones office furniture with the advantages of full-featured virtual reality and tabletop environments.
+A research toolkit for understanding how misinformation flows through a system.
+Auditory enhancement of braille text-based markup to help the visually impaired navigate text-based information around
+We want to help people that are victims of sexual assault or harassment
+Find Your Flex is a website that allows students to learn basic financial literacy concepts without the need for any advanced coding knowledge.
+Learn the art of long-distance communication with communication errors alone
+To enable musicologists to better communicate with patients.
+a convenient way to find appointments
+An app designed to make doing community work easier through a competitive coding game.
+Check it before you throw it.
+A self-sustainable wearable device, capable of detecting heart rhythm and tone changes before it even hits the wire.
+An app that helps visually impaired people find their way around in the park.
+A Simple Method That Does Everything But Runs
+IoT mailbox that should notify you when your messages are received.
+An app that connects sellers and buyers to each other to make a single item for the buyer.
+A machine learning app to help paralyzed people walk again
+A simple tool to create simple 2D games with a camera
+Empowering the 99% to make data-driven decisions
+A voice-to-sign interface for teachers to use to help students communicate with their students.
+Crowdsourced info about how sites use traffic to calculate points
+Fostering bonds with your friends and family through messaging.
+An IOT treatment for obsessive-compulsive disorder that targets the problem area.
+Empowering Farmers to Keep Increasing In Security
+Our objective is to bring an AI that can understand and help confused people.
+A NLP-based token that allows users to pay with any cryptocurrency to access digital content from platforms other than Amazon.
+Streamers can tailor the experience of using their content to different audiences and needs. This is known as Content Guarantee.
+Our project is to connect data scientists in the data science world with the people to help develop a collaborative paper agenda.
+Park. Pay. Go. Entirely without a doubt.
+More than just a screen name. A viable marketing tool for mobile and enterprise.
+It is a Deep Learning based Game Planet from which you work!
+Let your friends know you like them cars and tell you where to ride them
+An computer vision assistant for the visually impaired
+Safe Haven is an app that uses crowd-sourced information to recommend safe drinking areas to individuals who are homeless.
+A Decentralised Whistleblowing Application
+A study app on the importance of reading.
+Trading algorithms using a smartphone background image recognition system.
+Too Many Food Policies
+A mouth-to-mouth translation speaker that converts into English the lyrics to the video using the Amazon Alexa
+Safe, Secure, Scaleable...
+We want you to get your personal Website Template up and running with DocuSign 2.0!
+App to help teach financial literacy instead of handing out fliers.
+An and dynamic cat-and-mouse game where two players chattying while chatting about games
+This app uses computer vision and machine learning to help people find their missing kids.
+Feed the hungry, one book at a time.
+We developed a space travel simulator that discusses how the Earth and space interact.
+An app that allows tourist information to locally be retrieved from phone data using a packet of code.
+Discovering how charities work.
+News has never been easier!
+A machine learning eye detection app to recognize the facial movements of people using machine learning.
+Your Flooded Website Detects Speed
+MUSE, an interactive virtual space designed for the visually or mentally impaired
+A web application that reads from clipboard to aid in medical mission.
+An online tutoring platform to connect university students with the best tutors and facilitate their transition into a career in tech
+No more sneeze, no more wheeze, our app is ready to revolutionize the sneeze checker
+Automated Absentee Deposit Advisory
+Enhance your practicing by augmenting your posture with a pose that is similar to a monitor
+Help geologists find the carbon cycle in their data
+An and automatic weapon fire prevention system
+An app that allows users to track the environmental impact of their vehicle using the SmartCar API
+Lead with Knowledge
+Instant identification for student loans
+Use your natural vision to create VR realistic environments!
+A game for where to study geese
+A scripting language for programmers to learn quickly and effectively write good code.
+A streamlined education website for students
+Empowering the 99% to make a difference
+Voter engagement in todays political climate is at an ALL TIME LOW. Young voters just dont vote in critical elections. So what better way to engage young people than to make an app?
+CodaCat is an efficient and intuitive way to find out about synthetic cannabis oils.
+An assistant device that helps you reflect on your mistakes and how you can improve
+A React Android app that makes DJs playlists with music from the DJ app
+A developer tool to help novice programmers pick up pieces
+An IOT prescription manager that helps all users have control of their finances and devices
+Ever wanted to buy a phone from your bed? Now you can, with the easy and free app of purchasing.
+An inexpensive research microscope that allows it to study small cracks in molds.
+An educational experience for preschoolers that will excite parents and increase classroom awareness.
+A simple way to visualise the environmental impact of your purchases.
+DApp for when you need help getting a haircut.
+A simple twitter bot that cleans up tweets about events that happened in the past 24 hours
+A precision-searcher that helps you find the perfect price for your animal
+A simple way to track expensive packages and monitor for mechanical problems before using the package
+A financial instruments platform for underprivileged students
+Motiv.ai is a tool that connects users with similar medical problems to set out to reach out and help.
+Scan it, throw it away. Scan it again, throw it away.
+The app allows people to manage their groceries and track their profits.
+A React Native app to help students find study groups at local universities
+A focused groupised environment for developing family and friends
+Creating a secure, accessible, scalable system to deploy to smart hosts
+A website that allows people to share and create e-business cards.
+An app that connects two trashcan containers to create electrical shocks.
+The ultimate standard for playing musical instruments. Allows for playing in the sand.
+An AR-based, reality-checking tool to be used by administrators and students alike when they are unsure of where to study
+An app that connects individuals dealers for pickup and distribution of inventory
+Monetization is a decentralized, trustless crypto-currency that makes use of blockchain and smart contracts to make using it easier and more secure.
+An app that promotes healthy eating while encouraging proper care for the earth
+Your hourly pay, shared by all TechRepublic employees.
+A voice-to-brain game for teachers to help students stay safe
+An app that allows an individual to respond to an emergency message in real-time time and instantly receive a specific text response from the person in question
+A peer-to-peer lending platform that connects charities to micro enterprises in a micro-business model.
+An app that allows users to track the state of their car by taking a picture of their text.
+A Syntax that takes a list of variables and returns a related related terms lasting depth as per criteria specified by the publisher.
+A virtual reality game where you toss trash in a trashcan and monitor your tosses return dish.
+A standalone and intuitive way to learn how to code.
+A study tool to assist in mental health through instant identification of patients, schools, and places.
+Use the Tap Strap to control your lights. Use or leave the Element or the Tap.
+Identifying plants and avoiding poisonous plants globally.
+Scale Down Our World
+A simple and fast to use way to organize your college campus.
+This program detects signs of muscle wasting through computer
+divider2 is a tool for learning the sounds of different languages together.
+Use musical styles the same way people use song lyrics: sing and change the beats!
+A web application that connects you to your university and your lectures
+A program that shows the best movies and TV shows for kids
