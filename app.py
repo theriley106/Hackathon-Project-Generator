@@ -43,6 +43,7 @@ RECENT = []
 STEPS = ["Generating Project Name", "Generating Logo", "Buying Domain Name", "Raising Seed Round", "Building Starter Code", "Preparing Zip File"]
 TIME_BETWEEN = 2.0
 PLUS_MINUS_TIME = .5
+print("FINISHED")
 
 def gen_waiting_time():
 	return TIME_BETWEEN + random.uniform(PLUS_MINUS_TIME * -1, PLUS_MINUS_TIME)
