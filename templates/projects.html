@@ -40,6 +40,14 @@
     function resort(sort_by){
       window.location.href = `/projects?sort_by=${sort_by}`;
     }
+
+    function update(idVal){
+      var txt = document.getElementById(idVal).innerHTML;
+      var numb = txt.match(/\d/g);
+      numb = numb.join("");
+      document.getElementById(idVal).innerHTML = parseInt(numb) + 1;
+
+    }
   </script>
   
   <style>
@@ -153,8 +161,8 @@
           <p><strong>{{item.title}}</strong></p>
           <p>{{item.tagline}}</p>
           <div class="likes-container">
-            <button type="button" class="btn btn-success like-button" onclick="like('{{item.oid}}')">Like</button>
-            <p class="like-text">{{item.num_likes}}</p>
+            <button type="button" onclick='update("{{item.title}}_count")' class="btn btn-success like-button" onclick="like('{{item.oid}}')">Like</button>
+            <p id="{{item.title}}_count" class="like-text">{{item.num_likes}}</p>
           </div>
         </div>
     {% endfor %}
