@@ -36,6 +36,10 @@ def get_new():
 def index():
 	return render_template("index.html")
 
+@app.route('/projects', methods=['GET'])
+def projects():
+	return render_template("projects.html")
+
 def gen_base_html(message):
 	html = """<center><h4><br><b>{}</b></h4><br></center>""".format(message)
 	return html
