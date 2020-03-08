@@ -1,9 +1,17 @@
-from flask import Flask, render_template, request, url_for, redirect, Markup, jsonify, make_response, send_from_directory, session, send_file
 import random
 from flask_sockets import Sockets
 import datetime
 import time
 import json
+import zipfile
+import os
+import ssl
+import pymongo
+from bson.objectid import ObjectId
+from bson.json_util import dumps as bsondumps
+from pymongo import *
+from datetime import datetime
+from flask import *
 
 from googleapiclient.discovery import build
 CX = "015106168428982565841:kdznjgvin4h"
@@ -51,6 +59,7 @@ people = db.people
 
 db = client.database
 hackathon_ideas = db.hackathon_ideas
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -124,19 +133,20 @@ if __name__ == '__main__':
 
 @app.route('/testdata', methods=['GET'])
 def test():
-	import datetime
 	personDocument = {
-	"name": { "first": "Alan", "last": "Turing" },
-	"birth": datetime.datetime(1912, 6, 23),
-	"death": datetime.datetime(1954, 6, 7),
-	"contribs": [ "Turing machine", "Turing test", "Turingery" ],
+	"name": {"first": "Alan", "last": "Turing"},
+	"birth": datetime(1912, 6, 23),
+	"death": datetime(1954, 6, 7),
+	"contribs": ["Turing machine", "Turing test", "Turingery"],
 	"views": 1250000
 	}
 	return str(people.insert_one(personDocument))
 
+
 @app.route('/test_image/<title>')
 def test_image(title):
 	return generate_image_url(title, "not using this yet")
+
 
 def get_image_link(term):
 	service = build("customsearch", "v1", developerKey=KEY)
@@ -151,9 +161,11 @@ def get_image_link(term):
 		return None
 	return res["items"][0]["link"]
 
+
 def get_keywords(big_string):
 	# pass through for now
 	return big_string
+
 
 def generate_image_url(title, tagline):
 	default_image_link = "https://illustoon.com/photo/3813.png"
@@ -162,19 +174,70 @@ def generate_image_url(title, tagline):
 
 def save_real_fake_idea(title, tagline, image_url):
 	idea_document = {
-		title: title,
-		tagline: tagline,
-		image_url: image_url,
-		num_likes: 0
+		"title": title,
+		"tagline": tagline,
+		"image_url": image_url,
+		"created_at": time.time(),
+		"num_likes": 0
 	}
 	result = hackathon_ideas.insert_one(idea_document)
 	# if success update all websockets
 	# do something with result
+		# probably want
 
-def get_results():
 
+@app.route('/ideas')
+def get_results_endpoint():
+	page_size = request.args.get('page_size')
+	page_num = request.args.get('page_num')
+	query_str = request.args.get('query_str')
+	print(page_size)
+	return bsondumps(get_results(page_size=page_size, page_num=page_num, query_str=query_str))
+
+
+def get_results(page_size=50, page_num=0, query_str="created_at"):
+	# handle weird stuff with strings and Nones
+	page_size = 50 if page_size == None else int(page_size)
+	page_num = 0 if page_num == None else int(page_num)
+	query_str = "created_at" if query_str == None else query_str
+
+	query_result = db.hackathon_ideas.find({}).sort(
+		[(query_str, -1)]).skip(page_num * page_size).limit(page_size)
+	return query_result
+
+
+def zipdir(path, ziph, title, img_src):
+	# ziph is zipfile handle
+	for root, dirs, files in os.walk(path):
+		for file in files:
+			if file == "README.md" or file == "home.pug" or file == "header.pug":
+				with open(os.path.join(root, file), mode="r") as f:
+					text = f.read()
+					textCopy = text
+					text = text.replace("Hackathon Starter", title)
+					hackathon_starter_image_url = "https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg"
+					text = text.replace(hackathon_starter_image_url, img_src)
+					ziph.writestr(os.path.join(root, file), text)
+			else:
+				ziph.write(os.path.join(root, file))
 
 @app.route('/starter')
 def download_starter():
 	title = request.args.get('title')
-	return send_file('hackathon-starter-master.zip', attachment_filename=f'{title}.zip')
+	tagline = request.args.get('tagline')
+	img_src = request.args.get('img_src')
+
+	zipf = zipfile.ZipFile(f'{title}_starter.zip', 'w', zipfile.ZIP_DEFLATED)
+	zipdir('./hackathon-starter-master', zipf, title, img_src)
+	zipf.close()
+
+	return send_file(f'{title}_starter.zip')
+
+@app.route('/like/<oid>', methods=['POST'])
+def like_idea(oid):
+	document = db.hackathon_ideas.find_one({"_id": ObjectId(oid)})
+	document["num_likes"] = document["num_likes"] + 1
+	return bsondumps(db.hackathon_ideas.save(document))
+
+if __name__ == '__main__':
+	app.run(host='127.0.0.1', port=5000)
