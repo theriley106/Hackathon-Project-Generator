@@ -89,47 +89,25 @@
   <div class="container-fluid bg-3 text-center">    
   <h3>Recent Projects</h3><br>
   <div class="row">
-    <div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Some text..</p>
-      <button type="button" class="btn btn-success">Like</button>
-    </div>
-    <div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Some text..</p>
-      <button type="button" class="btn btn-success">Like</button>
-    </div><div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Some text..</p>
-      <button type="button" class="btn btn-success">Like</button>
-    </div><div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Some text..</p>
-      <button type="button" class="btn btn-success">Like</button>
-    </div>
+    {% for item in top3 %}
+        <div class="col-sm-3">
+          <img src="{{item.image}}" class="img-responsive" style="width:100%" alt="Image">
+          <p>{{item.title}}</p>
+          <button type="button" class="btn btn-success">Like</button>
+        </div>
+    {% endfor %}
   </div>
 </div><br>
 
 <div class="container-fluid bg-3 text-center">    
   <div class="row">
-    <div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Some text..</p>
-      <button type="button" class="btn btn-success">Like</button>
-    </div>
-    <div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Some text..</p>
-      <button type="button" class="btn btn-success">Like</button>
-    </div><div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Some text..</p>
-      <button type="button" class="btn btn-success">Like</button>
-    </div><div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Some text..</p>
-      <button type="button" class="btn btn-success">Like</button>
-    </div>
+    {% for item in top6 %}
+        <div class="col-sm-3">
+          <img src="{{item.image}}" class="img-responsive" style="width:100%" alt="Image">
+          <p>{{item.title}}</p>
+          <button type="button" class="btn btn-success">Like</button>
+        </div>
+    {% endfor %}
   </div>
 </div>
 

@@ -23,7 +23,10 @@ def gen_waiting_time():
 
 @app.route("/recent", methods=["GET"])
 def recent():
-	return jsonify({"data": RECENT})
+	info = []
+	for val in RECENT:
+		info.append({"title": val, "image": "https://placehold.it/150x80?text=IMAGE"})
+	return jsonify({"data": info})
 
 @app.route("/newIdea", methods=["GET"])
 def get_new():
@@ -38,7 +41,12 @@ def index():
 
 @app.route('/projects', methods=['GET'])
 def projects():
-	return render_template("projects.html")
+	info = []
+	for val in RECENT:
+		info.append({"title": val, "image": "https://placehold.it/150x80?text=IMAGE"})
+	top3 = [x for i, x in enumerate(info) if i < 4]
+	top6 = [x for i, x in enumerate(info) if i >= 4 and i<8]
+	return render_template("projects.html", top3=top3, top6=top6)
 
 def gen_base_html(message):
 	html = """<center><h4><br><b>{}</b></h4><br></center>""".format(message)
