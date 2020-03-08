@@ -15,6 +15,20 @@
         return xmlHttp.responseText;
     }
 
+    function like(id) {
+
+      url = "/like"
+      const response = fetch(url + `/${id}`, {
+        method: 'POST',
+      }).then(
+        (response) => {
+          //  update likes if success
+          console.log(response)
+        }
+      );
+      // return await response.json(); // parses JSON response into native JavaScript objects
+    }
+
     function newIdea(){
       x = httpGet("/newIdea");
       document.getElementById("hackathonIdea").innerHTML = x;
@@ -89,13 +103,16 @@
   <div class="container-fluid bg-3 text-center">    
   <h3>Recent Projects</h3><br>
   <div class="row">
-    {% for item in top3 %}
-        <div class="col-sm-3">
-          <img src="{{item.image}}" class="img-responsive" style="width:100%" alt="Image">
-          <p>{{item.title}}</p>
-          <button type="button" class="btn btn-success">Like</button>
-        </div>
-    {% endfor %}
+    <div class="d-flex align-items-stretch">
+      {% for item in top3 %}
+          <div class="col-sm-3">
+            <img src="{{item.image}}" class="img-responsive" style="width:100%" alt="Image">
+            <p>{{item.title}}</p>
+            <button type="button" class="btn btn-success" onclick="like('{{item.oid}}')">Like</button>
+            <p>{{item.num_likes}}</p>
+          </div>
+      {% endfor %}
+    </div>
   </div>
 </div><br>
 
@@ -105,7 +122,8 @@
         <div class="col-sm-3">
           <img src="{{item.image}}" class="img-responsive" style="width:100%" alt="Image">
           <p>{{item.title}}</p>
-          <button type="button" class="btn btn-success">Like</button>
+          <button type="button" class="btn btn-success" onclick="like('{{item.oid}}')">Like</button>
+          <p>{{item.num_likes}}</p>
         </div>
     {% endfor %}
   </div>

@@ -240,7 +240,6 @@ No longer used: Driving with unnecessary habits undone
 Car park monitoring and optimization - Drive safe with Uber
 No longer used: Shopping online with Drive, Shop online with Walmart
 Improving accessibility with machine learning
-
 An app designed to assist doctors in making decisions on handing out antibiotic prescriptions
  An IMU based controller for doom
 An android app that scrapes online to find materials to make a drum kit and returns with a drummin table and schematics.

@@ -15,7 +15,7 @@ from flask import *
 
 from googleapiclient.discovery import build
 CX = "015106168428982565841:kdznjgvin4h"
-KEY = "AIzaSyDmAMJpq3oTLS-L43e9RgqpbioSiHHgM9w"
+KEY = "AIzaSyAIQaiuCivVITuKtoM_myK83I8_UwwXyXc"
 
 
 app = Flask(__name__, static_url_path='/static')
@@ -67,11 +67,12 @@ def index():
 
 @app.route('/projects', methods=['GET'])
 def projects():
-	info = []
-	for val in RECENT:
-		info.append({"title": val, "image": "https://placehold.it/150x80?text=IMAGE"})
-	top3 = [x for i, x in enumerate(info) if i < 4]
-	top6 = [x for i, x in enumerate(info) if i >= 4 and i<8]
+	sort_by = request.args.get('sort_by')
+	info = get_results(page_size=8, query_str=sort_by)
+	res = [{"title": x["tagline"], "image": x["image_url"], "oid": x["_id"], "num_likes": x["num_likes"]} for x in info]
+	top3, top6 = res[:4], res[4:]
+	print(top3)
+	print(top6)
 	return render_template("projects.html", top3=top3, top6=top6)
 
 def gen_base_html(message):
@@ -108,7 +109,7 @@ def echo_socket(ws):
 		for i, step in enumerate(STEPS):
 			html = gen_html(base_html, currentLoading=i)
 			html_final = base_html + html
-			ws.send(json.dumps({"html": html_final, "updated": str(datetime.datetime.now())}))
+			ws.send(json.dumps({"html": html_final, "updated": str(datetime.now())}))
 			time.sleep(gen_waiting_time())
 		html = gen_html(base_html, currentLoading=1000, finish=True)
 
@@ -124,7 +125,7 @@ def echo_socket(ws):
 		
 
 		# html_2 = html_2 + ''
-		ws.send(json.dumps({"html": html_2, "updated": str(datetime.datetime.now())}))
+		ws.send(json.dumps({"html": html_2, "updated": str(datetime.now())}))
 		time.sleep(.1)
 
 @app.route('/testdata', methods=['GET'])
@@ -165,7 +166,7 @@ def get_keywords(big_string):
 
 def generate_image_url(title, tagline):
 	default_image_link = "https://illustoon.com/photo/3813.png"
-	return get_image_link(get_keywords(title)) or default_image_link
+	return get_image_link(get_keywords(f'{title} {tagline}')) or default_image_link
 
 
 def save_real_fake_idea(title, tagline, image_url):
