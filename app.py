@@ -12,6 +12,8 @@ MESSAGES = []
 
 PROJECTS = []
 
+IDEAS = [x for x in open("ideas.txt").read().split("\n") if len(x) > 5 and len(x) < 200]
+RECENT = []
 STEPS = ["Generating Project Name", "Generating Logo", "Buying Domain Name", "Raising Seed Round", "Building Starter Code", "Preparing Zip File"]
 TIME_BETWEEN = 2.0
 PLUS_MINUS_TIME = .5
@@ -19,10 +21,16 @@ PLUS_MINUS_TIME = .5
 def gen_waiting_time():
 	return TIME_BETWEEN + random.uniform(PLUS_MINUS_TIME * -1, PLUS_MINUS_TIME)
 
+@app.route("/recent", methods=["GET"])
+def recent():
+	return jsonify({"data": RECENT})
+
 @app.route("/newIdea", methods=["GET"])
 def get_new():
-	ideas = [x for x in open("ideas.txt").read().split("\n") if len(x) > 5 and len(x) < 200]
-	return random.choice(ideas)
+	index = random.randint(0, len(IDEAS)-1)
+	chosenIdea = IDEAS.pop(index)
+	RECENT.append(chosenIdea)
+	return chosenIdea
 
 @app.route('/', methods=['GET'])
 def index():
