@@ -82,6 +82,13 @@
 .main {
   overflow:auto;
 }
+.img-responsive {
+  width: 360px;
+  height: 200px;
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  margin-bottom: 1rem;
+}
   </style>
 </head>
 <body>
@@ -107,7 +114,8 @@
       {% for item in top3 %}
           <div class="col-sm-3">
             <img src="{{item.image}}" class="img-responsive" style="width:100%" alt="Image">
-            <p>{{item.title}}</p>
+            <p><strong>{{item.title}}</strong></p>
+            <p>{{item.tagline}}</p>
             <button type="button" class="btn btn-success" onclick="like('{{item.oid}}')">Like</button>
             <p>{{item.num_likes}}</p>
           </div>
@@ -121,7 +129,8 @@
     {% for item in top6 %}
         <div class="col-sm-3">
           <img src="{{item.image}}" class="img-responsive" style="width:100%" alt="Image">
-          <p>{{item.title}}</p>
+          <p><strong>{{item.title}}</strong></p>
+          <p>{{item.tagline}}</p>
           <button type="button" class="btn btn-success" onclick="like('{{item.oid}}')">Like</button>
           <p>{{item.num_likes}}</p>
         </div>
