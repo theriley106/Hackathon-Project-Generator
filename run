@@ -1,3 +1,1 @@
-pip3 install gunicorn
-
-gunicorn -k flask_sockets.worker app:app -b 0.0.0.0:8000
+gunicorn -k flask_sockets.worker app:app -b 0.0.0.0:8000 --workers=3 --error-logfile errors.log --access-logfile access.log --capture-output --log-level debug --daemon

@@ -26,7 +26,7 @@ MESSAGES = []
 
 PROJECTS = []
 
-uri = 'mongodb://hackhacks:Hackathons-are-super-cool!@cluster0-shard-00-00-2o2wa.gcp.mongodb.net:27017,cluster0-shard-00-01-2o2wa.gcp.mongodb.net:27017,cluster0-shard-00-02-2o2wa.gcp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'
+uri = 'mongodb+srv://hackhacks:Hackathons-are-super-cool!@cluster0-2o2wa.gcp.mongodb.net/test?retryWrites=true&w=majority'
 
 client = MongoClient(uri, ssl_cert_reqs=ssl.CERT_NONE)
 
