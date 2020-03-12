@@ -1,5 +1,7 @@
 import re
 from app import db, get_results
+
+
 def delete_duplicates():
 	all_entries = get_results(1000)
 	seen_entries = set()
@@ -11,4 +13,5 @@ def delete_duplicates():
 			entry["title"] = re.sub(r'[^\w\s]','', entry["title"])
 			db.hackathon_ideas.save(entry)
 			seen_entries.add(entry["title"])
+				
 delete_duplicates()
